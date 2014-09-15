@@ -1,0 +1,16 @@
+
+{% extends 'main.html' %}
+
+{% block article %}
+<h6>Date pablishing: {{article.article_date}}</h6>
+
+<h4>{{article.article_title}}</h4>
+<p>{{article.article_text}}</p>
+{% if article.article_image %}
+<p><img src="/static/{{article.article_image}}" width="200"/></p>
+{% endif %}
+<hr>
+
+<h6><a href="articles/">{{"Back"}}</a></h6>
+{% endblock %}
+
