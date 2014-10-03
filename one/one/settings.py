@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sorl.thumbnail',
+    'south',
     'oneapp',
     'PIL',
 )
@@ -69,7 +71,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -81,11 +83,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-MEDIA_ROOT = '/Users/IvanSavickiy/djangoenv/bin/one/static/'
+MEDIA_ROOT = '/Users/IvanSavickiy/djangoenv/bin/one/media/'
+
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
+
+#STATIC_ROOT = '/Users/IvanSavickiy/djangoenv/bin/one/static/'
 
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
     '/Users/IvanSavickiy/djangoenv/bin/one/oneapp/templates',
     '/Users/IvanSavickiy/djangoenv/bin/one/templates',
+)
+
+STATICFILES_DIRS = (
+     ('static', '/Users/IvanSavickiy/djangoenv/bin/one/static'),
 )

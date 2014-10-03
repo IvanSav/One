@@ -1,16 +1,46 @@
-
 {% extends 'main.html' %}
 
+
+{% load staticfiles %}
+
 {% block article %}
-<h6>Date pablishing: {{article.article_date}}</h6>
 
-<h4>{{article.article_title}}</h4>
-<p>{{article.article_text}}</p>
-{% if article.article_image %}
-<p><img src="/static/{{article.article_image}}" width="200"/></p>
-{% endif %}
-<hr>
 
-<h6><a href="articles/">{{"Back"}}</a></h6>
+<div class="row">
+    <div class="large-8 large-centered columns">
+
+       <h4>{{article.article_title}}</h4>
+       <p>{{article.article_text}}</p>
+       {% if article.article_image %}   
+           
+           
+
+          <div class="blokimg">
+             <div class="overlay" id="open">
+                 <div class="overlay_container">
+                    <a href="#close">
+                    <img src="{{article.article_image.url}}"/>
+                   </a>
+                </div>
+             </div>
+          <a href="#open">
+              <img src="{{article.article_image.url}}" width="150" height="150"/>
+          </a>
+          </div>    
+       {% endif %}  
+       <hr>
+   </div>
+</div>      
+
+<div class="large-4 large-centered columns">
+    <h6><a href="articles/">{{"Back"}}</a></h6>
+    <form action="http://127.0.0.1:8000/articles/addorder/{{article.id}}/" method="post">
+    {% csrf_token %}
+    
+    {{ form }}
+    <input type="submit" class="button" value="Order now">
+    </form>
+    <h6><a href="http://127.0.0.1:8000/articles/example/{{article.id}}/">{{"example"}}</a></h6>
+
 {% endblock %}
 

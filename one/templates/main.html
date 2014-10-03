@@ -3,12 +3,82 @@
 <html>
 <head>
 <Title> Django </Title>
+<link rel="stylesheet" type="text/css" href="{% static "static/css/foundation.css" %}">
+ <!-- script -------------------------------------------------------------------------->	
 
+<style type="text/css">
+            .blokimg {position: relative;}
+
+            .overlay{
+               display: none;
+               height: auto;
+               position: absolute;
+               width: auto;
+               z-index: 999; 
+            }
+            .overlay .overlay_container{
+               display: table-cell;
+  
+               vertical-align: middle;
+            }
+            .overlay_container img{
+               background-color: green;
+               padding: 5px;
+               -webkit-border-radius: 5px;
+               -moz-border-radius: 5px;
+            }
+            .overlay:target {
+               display: table;
+            }
+          </style>
+ <!-- script -------------------------------------------------------------------------->
 </head>
 <body>
-<h1><a href="/">Мой блог</a></h1>
 
-{% block article %}{% endblock %}
+<div class="row">
+    <div class="large-3 columns">
+    <p><a href="/"><img src="{% static "one.tiff" %}"></a</p>
+    </div> 
+ <!-- bar -------------------------------------------------------------------------->
+ <!-- bar -------------------------------------------------------------------------->
+  <!--
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">My Site</a></h1>
+    </li>
+    
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+     <!--
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <!--
+    <ul class="right">
+      <li class="active"><a href="#">Right Button Active</a></li>
+      <li class="has-dropdown">
+        <a href="#">Right Button Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class="active"><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <!--
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+  </section>
+</nav>
+
+ <!-- bar -------------------------------------------------------------------------->
+ <!-- bar -------------------------------------------------------------------------->
 </div>
+{% block article %}{% endblock %}
+    
 </body>
 </html>
